@@ -1,0 +1,101 @@
+//////////
+DATA
+//////////
+
+SAVEFILE.ini consists of the following sections:
+
+SECTION			KEY				VALUE			PURPOSE
+"player"
+				Location		string			Stores the last room the player was in.
+				Name			string			Stores the name the player chose for themself.
+"quests"
+				Accepted		ds_list			A list of quests the player has accepted.
+				Completed		ds_list			A list of quests the player has completed.
+												(References an accompanying master quest ds_list.)
+"stations"
+				Name			string			The name of the station.
+				Docked			ds_maps			A map of docked ship maps and their contents, see below.
+"active ship"
+				Type			string			The type of ship (ie. Rifter, Thorax).
+				Name			string			The player's custom name for the ship.
+				Class			string			The class (ie. frigate, cruiser) of the ship's hull (for module concerns).
+				Tank			int				The durability of the ship.
+				Velocity		int				The max speed of the ship.
+				Agility			int				The inertial penalty (slow down, direction change) of the ship.
+				Capacitor?
+				Modules			ds_map			A map of module maps currently fit to the ship.
+				Cargo			ds_map			A map of item maps in the ship's cargo hold.
+
+/////
+
+Outside Files:
+
+FILE				PURPOSE
+quests.ini			An .ini of quests converted into a master list. // necessary?
+items.json			A master spreadsheet of all base items, converted into a map.
+						Key/Value pairs include: Name, Type, Description, Damage, Cooldown, Range, etc
+hulls.json			A master spreadsheet of all hulls, converted into a map.
+						Key/Value pairs include: Name, Class, Tank, Velocity, Agility, etc
+stations.json		A master spreadsheet of all stations, converted into a map.
+
+The master maps are COPIED to the SAVEFILE.ini and are manipulated indepedently.
+
+They serve only as a reference for adding new items or ships to the player's cargo,
+or as a reference for the first time a station is visited.
+
+//////////
+SCENES
+//////////
+
+STATIONS:
+Stations are nothing more than a new, blank (no game objects) scene with a GUI populated by 'stations.json' and 'SAVEFILE.ini'.
+
+Features:
+- The station name.
+- A picture of your current ship.
+- A list of services (like repairing, marketplace, local taverns, etc).
+- A hangar to dock ships in (up to 3).
+- An 'undock' button.
+- A 'sleep' button.
+
+When a player requests docking permission to a station, the following takes place, in order:
+
+1) Get station name as a string
+2) Check if that string exists as a key in the 'Stations' section of 'SAVEFILE.ini' and store as boolean 'SHIPSDOCKED'.
+3) Create the station GUI based on the cooresponding data from the 'stations.json' map.
+4) If 'SHIPSDOCKED' == true, update the station GUI with the docked ships.
+5) Update SAVEFILE.ini's 'Player - Location' section.
+
+Selecting a docked ship will swap the 'active' ship map with the corresponding 'docked' ship map.
+
+Selecting 'undock' or 'sleep' will write to SAVEFILE.ini's 'station - docked' and 'active ship' maps.
+If there are no docked ships, 'station - docked' can be initialized.
+The player must always have an active ship.
+
+/////
+
+KSPACE:
+A static room/scene (tied to campaign) that contains predetermined game objects.
+
+Features:
+- System name
+- Player object (free movement)
+- Stations (sometimes)
+- Stargates (entrances and exits)
+- Asteroids (shoot them to find hidden goods)
+- Pirates (enemy ships)
+- NPCs (quest points or points of interest)
+- Can contain 'puzzles' and other storyline elements
+
+/////
+
+JSPACE:
+A fully procedurally-generated room/scene like a 'map' in Path of Exile.
+
+Features:
+- Relativity (a number from 1 to X that determines the difficulty)
+- Player object (free movement)
+- Wormhole (both entrance & exit at center of map)
+- Asteroids (shoot them to find hidden goods)
+- Aliens (enemy creatures)
+- Alien caches (special treasures)

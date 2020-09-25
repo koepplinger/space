@@ -1,0 +1,14 @@
+moving=false;
+turning=false
+burning=false;
+accelerating=false;
+deccelerating=false;
+lastspeed=0;
+hp=5;
+velocity=1;
+inertia=.9;
+seeking=true;
+alarm[0]=300;
+shoot=true;
+webbed=false;
+flyby=false;

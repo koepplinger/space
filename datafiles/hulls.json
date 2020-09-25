@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Rifty",
+    "sprite": "sRifty",
+    "class": "Frigate",
+    "tank": 50,
+    "velocity": 3,
+    "inertia": 0.7,
+    "capacitor": 10
+  },
+  {
+    "name": "Vexy",
+    "sprite": "sVexy",
+    "class": "Cruiser",
+    "tank": 100,
+    "velocity": 2,
+    "inertia": 0.3,
+    "capacitor": 25
+  },
+  {
+    "name": "Foon",
+    "sprite": "sFoon",
+    "class": "Battleship",
+    "tank": 500,
+    "velocity": 1,
+    "inertia": 0.1,
+    "capacitor": 100
+  }
+]

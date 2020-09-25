@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Blaster",
+    "category": "Gun",
+    "sprite": "sBlaster",
+    "object": "oBlaster",
+    "description": null,
+    "damage": 5,
+    "energy": 5,
+    "duration": 1,
+    "cooldown": 0.5
+  },
+  {
+    "name": "Chaingun",
+    "category": "Gun",
+    "sprite": "sChaingun",
+    "object": "oChaingun",
+    "description": null,
+    "damage": 1,
+    "energy": 1,
+    "duration": 0.5,
+    "cooldown": 0.1
+  },
+  {
+    "name": "Webber",
+    "category": "Electronic",
+    "sprite": "sWebber",
+    "object": "oWebber",
+    "description": null,
+    "damage": null,
+    "energy": 5,
+    "duration": 5,
+    "cooldown": 10
+  },
+  {
+    "name": "Repper",
+    "category": "Tank",
+    "sprite": "sRepper",
+    "object": "oRepper",
+    "description": null,
+    "damage": null,
+    "energy": 20,
+    "duration": 2,
+    "cooldown": 10
+  },
+  {
+    "name": "Burner",
+    "category": "Thruster",
+    "sprite": "sBurner",
+    "object": "oBurner",
+    "description": null,
+    "damage": null,
+    "energy": 10,
+    "duration": 10,
+    "cooldown": 30
+  }
+]
