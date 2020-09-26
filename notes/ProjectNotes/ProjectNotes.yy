@@ -1,7 +1,7 @@
 {
   "parent": {
-    "name": "spacearpg",
-    "path": "spacearpg.yyp",
+    "name": "space",
+    "path": "space.yyp",
   },
   "resourceVersion": "1.1",
   "name": "ProjectNotes",
