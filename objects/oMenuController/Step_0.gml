@@ -1,18 +1,12 @@
-/// @desc Control
-#region Selection changing
-if keyboard_check_pressed(vk_up)&&menuselection>0{
-	menuselection--;
-	blink=true;
-	alarm[0]=blinktimer;
+/// @desc Selection input
+#region Menu item selection
+if keyboard_check_pressed(MENUUP)&&menuselection>0{
+	menuselection--;blink=true;alarm[0]=blinktimer;
 }
-if keyboard_check_pressed(vk_down)&&menuselection<maxitems{
-	menuselection++;
-	blink=true;
-	alarm[0]=blinktimer;
+if keyboard_check_pressed(MENUDOWN)&&menuselection<maxitems{
+	menuselection++;blink=true;alarm[0]=blinktimer;
 }
-#endregion
-#region Enact selected menu item
-if keyboard_check_pressed(vk_enter){
+if keyboard_check_pressed(MENUCHOOSE){
 	switch menuselection{
 		case 0:
 			newgame=true;
@@ -22,12 +16,18 @@ if keyboard_check_pressed(vk_enter){
 		case 1:
 			if file_exists(SAVEFILE){
 				var controller=instance_create_depth(-5,-5,0,oGameController);
-				global.save=ds_map_secure_load(SAVEFILE);
+
+				// load savefile
+				var file=file_text_open_read(SAVEFILE);
+				var jstring=file_text_read_string(file);
+				file_text_close(file);
+				global.save=json_decode(jstring);
+				
 				room_goto(asset_get_index(global.save[?"player"][?"location"]));
 			}
 			break;
 		case 2:
-		
+			// options menu
 			break;
 		case 3:
 			game_end();

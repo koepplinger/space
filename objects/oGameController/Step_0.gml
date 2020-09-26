@@ -47,3 +47,9 @@ if mouse_x>896&&mouse_y<64&&mouse_check_button_pressed(mb_left){
 	room_goto(asset_get_index(global.save[?"player"][?"location"]));
 }
 #endregion
+
+#region debug controls
+
+if keyboard_check_pressed(vk_escape) game_end();
+
+#endregion

@@ -78,7 +78,7 @@ if speed>0{
 	}
 }
 
-if !flyby&&shoot&&point_in_circle(oPlayerShip.x,oPlayerShip.y,x,y,150){
+if !flyby&&!turning&&shoot&&point_in_circle(oPlayerShip.x,oPlayerShip.y,x,y,150){
 	shoot=false;
 	alarm[2]=20;
 	var bullet=instance_create_depth(x,y,0,oPirateBlaster);

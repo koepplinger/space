@@ -79,42 +79,42 @@ for (var i=0;i<ds_list_size(list);i++){
 // Data Structure for Savefile
 #macro SAVEFILE "save.ini"
 if oMenuController.newgame{
-file_delete(SAVEFILE);
-global.save=ds_map_create();
-	ship=ds_map_create();
-			modules=ds_map_create();
-				//ds_map_add(modules,"weapon","blaster");
-				//ds_map_add(modules,"thruster","afterburner");
-			cargo=ds_map_create();
-				//ds_map_add(cargo,0,"Fedo");
-				//ds_map_add(cargo,1,"Tobacco");
-				//ds_map_add(cargo,2,"Exotic Dancers");
-		ds_map_add(ship,"modules",modules);
-		ds_map_add(ship,"cargo",cargo);
-	player=ds_map_create();
-		ds_map_add(player,"name","clapback kenny");
-		ds_map_add(player,"location","");
-		ds_map_add(player,"x","256");
-		ds_map_add(player,"y","256");
-		ds_map_add(player,"dir","0");
-		ds_map_add(player,"home","");
-	stations=ds_map_create();
-			station1=ds_map_create();
-				//ds_map_add(station1,"services","repair shop");
-				hangar=ds_map_create();
-					//ds_map_add(hangar,0,ship);
-				ds_map_add(station1,"hangar",hangar);
-		ds_map_add(stations,"station1",station1);
-	//quests=ds_map_create();
+	file_delete(SAVEFILE);
+	global.save=ds_map_create();
+		ship=ds_map_create();
+				modules=ds_map_create();
+					//ds_map_add(modules,"weapon","blaster");
+					//ds_map_add(modules,"thruster","afterburner");
+				cargo=ds_map_create();
+					//ds_map_add(cargo,0,"Fedo");
+					//ds_map_add(cargo,1,"Tobacco");
+					//ds_map_add(cargo,2,"Exotic Dancers");
+			ds_map_add_map(ship,"modules",modules);
+			ds_map_add_map(ship,"cargo",cargo);
+		player=ds_map_create();
+			ds_map_add(player,"name","clapback kenny");
+			ds_map_add(player,"location","");
+			ds_map_add(player,"x","256");
+			ds_map_add(player,"y","256");
+			ds_map_add(player,"dir","0");
+			ds_map_add(player,"home","");
+		stations=ds_map_create();
+				station1=ds_map_create();
+					//ds_map_add(station1,"services","repair shop");
+					hangar=ds_map_create();
+						//ds_map_add(hangar,0,ship);
+					ds_map_add(station1,"hangar",hangar);
+			ds_map_add(stations,"station1",station1);
+		//quests=ds_map_create();
 
-	// Add main maps to save map
-	ds_map_add(global.save,"ship",ship);
-	ds_map_add(global.save,"player",player);
-	ds_map_add(global.save,"stations",stations);
-	/*ds_map_add(global.save,"quests",quests);
+		// Add main maps to save map
+		ds_map_add_map(global.save,"ship",ship);
+		ds_map_add_map(global.save,"player",player);
+		ds_map_add_map(global.save,"stations",stations);
+		/*ds_map_add(global.save,"quests",quests);
 
-	show_debug_message(string(global.save[?"ship"][?"cargo"][?1]));
-	show_debug_message(string(global.save[?"player"][?"name"]));*/
+		show_debug_message(string(global.save[?"ship"][?"cargo"][?1]));
+		show_debug_message(string(global.save[?"player"][?"name"]));*/
 }
 #endregion
 #region Configure camera
