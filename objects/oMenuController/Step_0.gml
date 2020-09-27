@@ -10,19 +10,17 @@ if keyboard_check_pressed(MENUCHOOSE){
 	switch menuselection{
 		case 0:
 			newgame=true;
-			var controller=instance_create_depth(-5,-5,0,oGameController);
+			instance_create_depth(-5,-5,0,oGameController);
 			room_goto(rAsteroidBeltOne);
 			break;
 		case 1:
 			if file_exists(SAVEFILE){
-				var controller=instance_create_depth(-5,-5,0,oGameController);
-
+				instance_create_depth(-5,-5,0,oGameController);
 				// load savefile
 				var file=file_text_open_read(SAVEFILE);
 				var jstring=file_text_read_string(file);
 				file_text_close(file);
 				global.save=json_decode(jstring);
-				
 				room_goto(asset_get_index(global.save[?"player"][?"location"]));
 			}
 			break;

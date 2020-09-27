@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sWebifier",
-    "path": "sprites/sWebifier/sWebifier.yy",
+    "name": "sWebber",
+    "path": "sprites/sWebber/sWebber.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Module Objects",
-    "path": "folders/Player Ship/Module Objects.yy",
+    "path": "folders/Player/Module Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "oWebifier",

@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "NPCs",
-    "path": "folders/Game Objects/NPCs.yy",
+    "path": "folders/NPCs.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPirate",

@@ -1,4 +1,5 @@
 // hp
+draw_self();
 if !seeking exit;
 var anchorx=x-16;
 var anchory=y+16;

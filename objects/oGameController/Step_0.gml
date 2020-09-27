@@ -16,8 +16,10 @@ if inventoryactive{
 	if mouse_check_button(SWAP)^^swapping.now{
 		selSwap(keyboard_check(SPLIT),keyboard_check(PEEL));
 	}
+	if mouse_check_button_pressed(mb_right) itemEquip();
 }
 #endregion
+
 #region Camera zoom controls
 // Change zoom
 if mouse_wheel_up()&&ZoomFactor<ZoomMaxFactor{
@@ -42,6 +44,7 @@ if ZoomRefresh{
 	show_debug_message(string(get_timer())+"μs [cogCamera]: Updated zoom.");
 }
 #endregion
+
 #region Station controls
 if mouse_x>896&&mouse_y<64&&mouse_check_button_pressed(mb_left){
 	room_goto(asset_get_index(global.save[?"player"][?"location"]));
@@ -49,7 +52,5 @@ if mouse_x>896&&mouse_y<64&&mouse_check_button_pressed(mb_left){
 #endregion
 
 #region debug controls
-
 if keyboard_check_pressed(vk_escape) game_end();
-
 #endregion

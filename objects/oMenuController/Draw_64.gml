@@ -1,11 +1,9 @@
 //// @desc Menu text
-
 // Draw menu title
 draw_set_font(fStationFont);
 draw_set_color(c_white);
 var titlestring="SpaceARPG";
 draw_text(anchorx-string_width(titlestring)/2,200,titlestring);
-
 // Draw menu items
 draw_set_font(fMenuItems);
 for (var i=0;i<maxitems;i++){

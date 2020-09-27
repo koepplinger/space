@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Ship Art",
-    "path": "folders/Player Ship/Ship Art.yy",
+    "path": "folders/Player/Ship Art.yy",
   },
   "resourceVersion": "1.0",
   "name": "oShipTrail",

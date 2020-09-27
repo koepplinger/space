@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Module Objects",
-    "path": "folders/Player Ship/Module Objects.yy",
+    "path": "folders/Player/Module Objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBlaster",

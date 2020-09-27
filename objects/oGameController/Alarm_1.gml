@@ -1,2 +1,2 @@
-/// @desc Toggle off map name flash 
+/// @desc Stop flashing map name
 mapnameflash=false;
